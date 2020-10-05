@@ -150,5 +150,5 @@ Note that some parts of these tutorials suggest you try them with a partner.  Wh
 
 While the rest of this session focuses on Python and Github as practical implementations of all of these principles, it's critical to realize that's just one set of platforms. Indeed you may find that half way through you're better off trying to map these concepts onto a language or platform you are more comfortable with. Go for it!  I'd love to hear how it works!  But hopefully you'll find all these same elements and learn how they make Open Development possible.
 
-On to [Part 2](Part2_prs_and_reviewing.ipynb)!
+Carry on by visiting the tutorial materials at https://github.com/jupytercon/2020-eteq - particularly [Part 2](https://github.com/jupytercon/2020-eteq/blob/master/notebooks/Part2_prs_and_reviewing.ipynb)
 <!-- #endregion -->
