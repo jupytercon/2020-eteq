@@ -12,7 +12,6 @@ jupyter:
     name: python3
 ---
 
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Open Development
 
