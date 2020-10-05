@@ -30,8 +30,11 @@ jobs:
       run: |
         cd slides
         mkdir html
-        jupytext README_slides.md --to ipynb
-        jupyter nbconvert README_slides.ipynb --to slides --SlidesExporter.reveal_theme=solarized --stdout > html/index.html
+        sed -i 's:../images:images:g' slides.md
+        jupytext slides.md --to ipynb
+        jupyter nbconvert slides.ipynb --to slides --SlidesExporter.reveal_theme=solarized --stdout > html/index.html
+        mkdir html/images
+        cp images/* html/images
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
