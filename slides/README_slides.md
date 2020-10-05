@@ -12,9 +12,6 @@ jupyter:
     name: python3
 ---
 
-<!-- #region slideshow={"slide_type": "slide"} -->
-*Note*: This notebook is intended as a presentation to be used with the [RISE](https://rise.readthedocs.io/en/stable/) tool. If you are viewing this notebook as text you may find it useful to install rise and experience it as a presentation instead of a set of notebook cells.
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Open Development
