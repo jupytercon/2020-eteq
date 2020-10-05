@@ -14262,6 +14262,11 @@ a.anchor-link {
     --jp-code-font-size: 19px;      /* instead of 13px */
     --jp-cell-prompt-width: 110px;  /* instead of 64px */
 }
+@media print {
+  body {
+    margin: 0;
+  }
+}
 </style>
 
 <style type="text/css">
@@ -14380,42 +14385,190 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Tutorial-slides">Tutorial slides<a class="anchor-link" href="#Tutorial-slides">&#182;</a></h1><ul>
-<li>Slides are optional (e.g., you may not use them if your presentation is via live coding).</li>
-<li>If the pre-recorded presentations will use slides, we request that you deposit the slides in this folder.</li>
-</ul>
+<p><em>Note</em>: This notebook is intended as a presentation to be used with the <a href="https://rise.readthedocs.io/en/stable/">RISE</a> tool. If you are viewing this notebook as text you may find it useful to install rise and experience it as a presentation instead of a set of notebook cells.</p>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-text-based-source">Use text-based source<a class="anchor-link" href="#Use-text-based-source">&#182;</a></h2><ul>
-<li>We ask that you use text-based formats for your slides, e.g., markdown </li>
-<li>This markdown file is an example source for slides using <code>nbconvert</code> and Reveal. See the GitHub action '.github/workflows/slides.yml' in this repo so see how this markdown file is converted to a HTML slide show and published on GitHub Pages - <a href="https://jupytercon.github.io/tutorial2020/">https://jupytercon.github.io/tutorial2020/</a></li>
+<h1 id="Open-Development">Open Development<a class="anchor-link" href="#Open-Development">&#182;</a></h1><p>Author: <em>Erik Tollerud</em> (@eteq on Github)</p>
+<div style="float: left">
+<a href="https://www.astropy.org/"><img src="../images/astropy_logo_small.png" width="350px" style="display: inline-block"></a> <a href="https://www.stsci.edu/"><img src="../images/stsci_pri_combo_mark_light_bkgd.png" width="300px"  style="display: inline-block"></a>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Co-authors from previous versions of the materials: <em>Brigitta Sipőcz</em> (@bsipocz), <em>Thomas Robitaille</em> (@astrofrog)</p>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="What-is-Open-Development?">What is Open Development?<a class="anchor-link" href="#What-is-Open-Development?">&#182;</a></h1><ul>
+<li>An approach to software development where all steps in the process (or at least as many as possible) are done in public.</li>
+</ul>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>This is more than "just" open source: it means all software contributions are done in the open, with review and discussion on them available to all who wish to participate.</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>The level at which any given person has influence depends on how a project is governed.  But many tend to operate as "do-ocracy" - the more work you're willing to do, the more influence you have.</li>
+</ul>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="What-are-Key-Social-Elements-of-Open-Development?">What are Key Social Elements of Open Development?<a class="anchor-link" href="#What-are-Key-Social-Elements-of-Open-Development?">&#182;</a></h1>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p>A shared space to publicize and propose changes to code. While lots of platforms exist to do this, <a href="https://github.com/">Github</a> and <a href="https://gitlab.com/">Gitlab</a> are the most well-known these days. Usually there's a canonical "main" version of the project, and a modern distributed version control system like <code>git</code>, although this isn't strictly necessary.</p>
+<p>Note this is <em>not</em> the same as an open source code repository, which may or may not enable open <em>development</em>.</p>
+<p>Even just a mailing list with patches can suffice (and indeed some open development models like <a href="https://lwn.net/Articles/702177/">Linux swear by it to this day</a>).</p>
+</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>A space to <em>discuss</em> those proposed changes that is public. Often this is the code submission itself, but might also be an independent mailing list, or both,</li>
+</ul>
+
+</div>
+</div></div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="What's-not-definitional-but-practically-needed?">What's not definitional but <em>practically</em> needed?<a class="anchor-link" href="#What's-not-definitional-but-practically-needed?">&#182;</a></h2>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Rules of engagement and related social norms.  Sometimes this is entirely unspoken, but in current times it's becoming more common to have at least partly an explicit code of conduct (for an example, see <a href="https://www.astropy.org/code_of_conduct.html">Astropy's</a>). But without this no one knows how to behave and contributions quickly evaporate.</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Someone who will make a decision on what code is acceptable and what needs changes (typically in the form of code review).  Often a maintainer of some portion of the code, either explicity or through experience and trust.</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>A space or spaces to discuss things like long-term planning or elements of the project not directly tied to the code like reaching out to users who are not controbutors, funding proposals, governance policies, decisions about release timing, and so on.</li>
+</ul>
+
+</div>
+</div></div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="And-what's-less-obvious?">And what's less obvious?<a class="anchor-link" href="#And-what's-less-obvious?">&#182;</a></h2>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>A place to build a shared culture and sense of humanity in the team. Sometimes this means face-to-face, but can also be an IRC/Slack/Matrix channel with silly jokes.</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Mechanisms for credit.  Without these Open Development can turn into a seemingly faceless mass of code with no one willing to "own" it.  Plus, it's important for people's livelihood to point to what they've helpded build!</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Software diplomats - people willing to do the work of building consensus in a public space on highly technical areas when the stakes are frequently <em>very</em> low (and emotions therefore very high...)</li>
+</ul>
+
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Many other tasks large and small! For a quick look at the breadth of roles, check out <a href="https://allcontributors.org/">Allcontributrs</a> or a team role page like <a href="https://www.astropy.org/team.html">Astropy's</a>.</li>
+</ul>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="What-are-the-Core-Technical-Enablers-of-Open-Development?">What are the Core Technical Enablers of Open Development?<a class="anchor-link" href="#What-are-the-Core-Technical-Enablers-of-Open-Development?">&#182;</a></h1><p>None of these are definitional, but in practice they are critical for modern projects:</p>
+<ul>
+<li>Distribution and packaging mechanisms</li>
+<li>Automated (or automatable) testing</li>
+<li>Documentation (often partially automated)</li>
 </ul>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="An-example-sub-slide">An example sub-slide<a class="anchor-link" href="#An-example-sub-slide">&#182;</a></h2><ul>
-<li>Another option: you can write your slide content using markdown and use an app for slide design, like <a href="https://www.deckset.com">Deckset</a> or similar.</li>
+<h2 id="Distribution-and-packaging-mechanisms">Distribution and packaging mechanisms<a class="anchor-link" href="#Distribution-and-packaging-mechanisms">&#182;</a></h2><p>By this I mean a way to declare a canonical version of the source code and wrap it up in a way that lets users reproduce locally what the developers have implemented.  In different languages that's takes different forms, including:</p>
+<ul>
+<li>Python packages from PyPI</li>
+<li>Rust crates from crates.io</li>
+<li>Javascript/Node packages and modules on NPM</li>
+<li>OS-specific package managers like APT, macports, etc</li>
+<li>A tarball with a makefile tagged with a specific version number</li>
 </ul>
+<p>All of these are distribution mechanisms that let there be a version that is released for users to easily access.  That way there's a shared understanding of what any given software change is coming from and where it will eventually appear for general consumption when accepted.</p>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Automated-(or-automatable)-testing">Automated (or automatable) testing<a class="anchor-link" href="#Automated-(or-automatable)-testing">&#182;</a></h2><p>While in principle an Open Development project does not need tests, in practice all but the simplest software will quickly become a bug-ridden mess without some way to ensure that new changes don't break old use cases. The Law of Unintended Consequences is iron-clad. So <em>some</em> form of testing that can be run repeatedly is usually necessary.  This can be any level of manual, but anything manual is often ignored...</p>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So the modern solution for this is automated testing that runs with every suggested code change - this is the core principle of "Continuous Integration" (CI). Modern CI frameworks can be arbitrarily complicated but generally run a testing framework that is specific to the language of the software being written, and displays the outcome in summary form when the code is submitted. For a canonical example, see how Travis CI renders in Github on a Python Project:</p>
+<p><img src="../images/travis-ci-on-github.png" width="700" alt="The yellow-ish banner on GitHub showing a branch has been pushed"></p>
+
+</div>
+</div></div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Documentation-(often-partially-automated)">Documentation (often partially automated)<a class="anchor-link" href="#Documentation-(often-partially-automated)">&#182;</a></h2><p>While again not strictly necessary, in practice most users or novice contributors have neither the time nor the background to delve into the code, issue tracker, or mailing list to understand the exact application for most parts of a code base.  So both user and developer-oriented documentation are usually necessary to enable Open Development.</p>
+<p>As with testing, keeping this documentation p-to-date as part of code contributions is part of the magic of Open Development - without it a project tends to stay known only to a small core who understand the big picture. It also tends to require CI-like system for documentation - a prominent example is <a href="https://readthedocs.org/">Readthedocs</a>.</p>
+<p>In practice this documentation usually lives as a part of the source code, versioned along with it. Some languages (particularly more modern ones) even have toolchains to closely connect code and documentation.  For example,  Python, Julia, and Rust all have a native or highly popular documentation tool that produces docs from appropriately-tagged source code.</p>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Naming-convention-and-file-list">Naming convention and file list<a class="anchor-link" href="#Naming-convention-and-file-list">&#182;</a></h2><ul>
-<li>Use a <strong>naming convention</strong> where each file name starts with a number, reflecting the order of use in the presentation of the tutorial.</li>
-<li>List your slide files in a markdown, with a brief description.</li>
-</ul>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2><p><strong>Recommend</strong> that slides be shared under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</p>
+<h1 id="Exercises/Tutorial-Overview">Exercises/Tutorial Overview<a class="anchor-link" href="#Exercises/Tutorial-Overview">&#182;</a></h1><p>While the above is a conceptual overview of the critical elements of Open Development, such a broad concept is hard to grasp without diving into some practical experiences. The rest of this tutorial is centered around exactly this - exploring the pieces of Open Development mentioned above via worked examples.</p>
+<p>Note that some parts of these tutorials suggest you try them with a partner.  While you can't "turn to your neighbor" if you are doing this tutorial on your own at a virtual conference, I strongly encourage you to find someone to try the tutorial with.  As the above describes, Open Development is as much a social as it is a technical process, so having at least one other person is necessary to really grok what's going on.</p>
+<p>While the rest of this session focuses on Python and Github as practical implementations of all of these principles, it's critical to realize that's just one set of platforms. Indeed you may find that half way through you're better off trying to map these concepts onto a language or platform you are more comfortable with. Go for it!  I'd love to hear how it works!  But hopefully you'll find all these same elements and learn how they make Open Development possible.</p>
+<p>On to <a href="Part2_prs_and_reviewing.ipynb">Part 2</a>!</p>
 
 </div>
 </div></section></section>
